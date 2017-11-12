@@ -141,26 +141,6 @@
 			\advance\pgf@x by -6pt
 		}%
 		
-		%\anchor{height}{%
-		%	\pgf@process{south}%
-		%	\pgf@yc=\pgf@y
-		%	\pgf@process{north}%
-		%	\advance\pgf@y by -\pgf@yc
-		%	\pgf@x=\z@
-		%	\edef\pgf@temp{\csname pgf@sh@nt@\pgfreferencednodename\endcsname}%
-		%	\expandafter\@shiftback\pgf@temp
-		%}
-		%\anchor{size}{%
-		%	\pgf@process{west}%
-		%	\pgf@xc=\pgf@x
-		%	\pgf@yc=\pgf@y
-		%	\pgf@process{east}%
-		%	\advance\pgf@x by -\pgf@xc
-		%	\advance\pgf@y by -\pgf@yc
-		%	\edef\pgf@temp{\csname pgf@sh@nt@\pgfreferencednodename\endcsname}%
-		%	\expandafter\@shiftback\pgf@temp
-		%}
-		
 		\nodeparts{text}%
 		\savedanchor{\mymacroname}{% manual 1035
 			\pgf@y=.15\ht\pgfnodeparttextbox % height of the box

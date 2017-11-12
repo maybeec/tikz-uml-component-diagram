@@ -1,0 +1,42 @@
+\documentclass{standalone}
+
+% to get predefined color 'SeaGreen'
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage{tikz}
+\usetikzlibrary{
+	arrows.meta,
+  shapes,
+  positioning,
+  calc,
+	decorations.markings,
+	decorations.pathreplacing,
+	decorations.text,
+	decorations.pathmorphing,
+	decorations.shapes
+}
+
+\usepackage{umldocument}
+\usepackage{umlmultidocument}
+\usepackage{umlcomponent}
+
+\tikzset{
+	doc/.style={umldocument, align=center, text width=1.5cm, minimum height=2.5cm},
+	multdoc/.style={umlmultidocument, align=center, text width=1.5cm, minimum height=2.5cm},
+	comp/.style={umlcomponent, align=center, text width=3cm, minimum height=1.5cm},
+	comment/.style={umldocument,fill=SeaGreen, text width=1.7cm, minimum height=.7cm}
+}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \node[multdoc] (0,0) 							(input) {Document Stack};
+  \node[comp, below=1cm of input]	(comp) {Component};
+	\node[comment, below left=-.5cm and -.7cm of comp] {Comment};
+	\node[doc, right=2cm of comp]	(output) {Document};
+	
+	\draw[->, thick, >=stealth] 				(comp) -- (input.south) node [pos=.4,fill=white] {consumes};
+	\draw[->, thick, >=stealth] 				(comp) -- (output) node [pos=0.45,fill=white] {produces};
+\end{tikzpicture}
+
+\end{document}
