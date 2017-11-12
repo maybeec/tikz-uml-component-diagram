@@ -30,13 +30,13 @@
 \begin{document}
 
 \begin{tikzpicture}
-  \node[multdoc] (0,0) 							(input) {Document Stack};
+  \node[multdoc] (0,0) 			(input) {Document Stack};
   \node[comp, below=1cm of input]	(comp) {Component};
 	\node[comment, below left=-.5cm and -.7cm of comp] {Comment};
 	\node[doc, right=2cm of comp]	(output) {Document};
 	
-	\draw[->, thick, >=stealth] 				(comp) -- (input.south) node [pos=.4,fill=white] {consumes};
-	\draw[->, thick, >=stealth] 				(comp) -- (output) node [pos=0.45,fill=white] {produces};
+	\draw[->, thick, >=stealth] 	(comp) -- (input.south) node [pos=.4,fill=white] {consumes};
+	\draw[->, thick, >=stealth] 	(comp) -- (output) node [pos=0.45,fill=white] {produces};
 \end{tikzpicture}
 
 \end{document}
